@@ -1,0 +1,27 @@
+.parent {
+  // call parent (.parent)
+  & + .sibling {
+    // property declation
+    // all margin set to auto
+    margin: auto {
+      // all top margin set to 10 px
+      top: 10px;
+    }
+    // call parent (.parent + .sibling)
+    & ~ .last {
+      // all padding set to 10 px
+      padding: 10px;
+    }
+  }
+}
+
+/* Expected output */
+/*
+.parent + .sibling {
+  margin: auto;
+  margin-top: 10px;
+}
+.parent + .sibling ~ .last{
+  padding: 10px;
+}
+*/
